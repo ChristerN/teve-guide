@@ -28,13 +28,15 @@
 
             @foreach (var p in Model)
             {
+                if(p.Id==25)
+                { 
                 <strong>@p.Title</strong> <br />
                 @p.Substance <br />
                 @p.Channel <br />
                 @p.Starttime <br />
 
                 @Html.ActionLink("Mer info", "Details", new { id = p.Id }) <br />
-
+                }
             }
 
 
