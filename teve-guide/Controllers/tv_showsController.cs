@@ -87,7 +87,7 @@ namespace teve_guide.Controllers
             return View(currentChannel.ToList());
         }
 
-        [Authorize]
+       // [Authorize]
 
         public ActionResult MyPage()
         {
