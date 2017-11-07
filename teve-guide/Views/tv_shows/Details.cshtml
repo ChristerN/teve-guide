@@ -1,0 +1,66 @@
+﻿@model teve_guide.Models.db.tv_shows
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tv_shows</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Starttime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Starttime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endtime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endtime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Substance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Substance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Channel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Channel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<teve_guide.Models.db.tv_shows>
+
+@{
+    ViewBag.Title = "På teve just nu";
+}
+
+<h2>Teve Guide - på teve just nu!</h2>
+
+<strong>Vi tipsar om dessa program</strong>
+<table>
+    <tr>
+        <td>@Html.Partial("_Puffar")</td>
+        <td>@Html.Partial("_Puffar")</td>
+        <td>@Html.Partial("_Puffar")</td>
+    </tr>
+</table>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<h3>Just nu visas:</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Starttime)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Endtime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Substance)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Channel)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Starttime < DateTime.Now && item.Endtime > DateTime.Now)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Starttime)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Endtime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Substance)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Channel)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+                    @Html.ActionLink("Dagens Tv-program på aktuell kanal", "CurrentTvTable", new { channel = item.Channel })<br />
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id }) @*|*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+                </td>
+            </tr>
+        }
+    }
+
+</table>

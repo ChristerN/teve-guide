@@ -1,0 +1,44 @@
+﻿@model IEnumerable<teve_guide.Models.db.tv_shows>
+@{
+    ViewBag.Title = "På TV om fyra dagar";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@DateTime.Today.AddDays(4)</h3>
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Starttime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Starttime > DateTime.Today.AddDays(4) && item.Endtime < DateTime.Today.AddDays(5))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Starttime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+
