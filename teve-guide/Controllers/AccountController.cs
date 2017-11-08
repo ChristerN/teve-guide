@@ -43,7 +43,7 @@ namespace teve_guide.Controllers
         public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "tv_shows");
         }
     }
 
