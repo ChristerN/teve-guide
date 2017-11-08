@@ -98,7 +98,7 @@ namespace teve_guide.Controllers
         {
            // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
             //bool value = (bool)cbValue.ConvertTo(typeof(bool));
-            return View();
+            return View(db.tv_shows.ToList());
             //var currentChannel = from c in db.tv_shows
             //                     where c.Channel.Contains(channel)
             //                     select c;
@@ -111,27 +111,27 @@ namespace teve_guide.Controllers
             ViewBag.Message = "Mina valda kanaler: ";
             if (collection["SVT1"] != null)
             {
-                ViewBag.Message = "Programtablå SVT 1";
+                ViewBag.Message += "Programtablå SVT 1";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 1") select c;
             }
             if (collection["SVT2"] != null)
             {
-                ViewBag.Message = "Programtablå SVT 2";
+                ViewBag.Message += "Programtablå SVT 2";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 2") select c;
             }
             if (collection["SVT2"] != null)
             {
-                ViewBag.Message = "Programtablå SVT 24";
+                ViewBag.Message += "Programtablå SVT 24";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 24") select c;
             }
             if (collection["TV4"] != null)
             {
-                ViewBag.Message = "Programtablå TV 4";
+                ViewBag.Message += "Programtablå TV 4";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 4") select c;
             }
             if (collection["TV6"] != null)
             {
-                ViewBag.Message = "Programtablå TV 6";
+                ViewBag.Message += "Programtablå TV 6";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
             }
             ViewBag.Message += collection["checkbox"].ToString();
