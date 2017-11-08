@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace teve_guide.Data
 {
@@ -20,6 +21,15 @@ namespace teve_guide.Data
             else
             { return false; }
         }
+
+        //public bool IsUserInRole(string userName, string roleName)
+        //{
+        //    var role = db.users
+        //         .Where(x => x.Username.Equals(userName))
+        //         .Include(x => x.Role).Where(x => x.Role.Role.Equals(roleName));
+
+        //    return role.Any();
+        //}
 
     }
 }

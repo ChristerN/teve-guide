@@ -21,7 +21,7 @@ namespace teve_guide.Security
             bool authorize = false;
             foreach (var roles in userAssignedRole)
             {
-                // authorize = db.IsUserInRole(httpContext.User.Identity.Name, roles);
+                //authorize = db.IsUserInRole(httpContext.User.Identity.Name, roles);
                 if (authorize)
                     return authorize;
             }
