@@ -265,8 +265,9 @@ namespace teve_guide.Controllers
         public ActionResult AdminPage()
         {
             ViewBag.Message = "Endast administratörer.";
-            return View();
-          
+            //return View();
+            return View(db.tv_shows.ToList());
+
         }
 
     }
