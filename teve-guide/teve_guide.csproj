@@ -213,7 +213,7 @@
     <Content Include="Views\tv_shows\Details.cshtml" />
     <Content Include="Views\tv_shows\Edit.cshtml" />
     <Content Include="Views\tv_shows\Index.cshtml" />
-    <Content Include="Views\Shared\_Puffar.cshtml" />
+    <Content Include="Views\Shared\_Puff1.cshtml" />
     <Content Include="Views\tv_shows\InFiveDaysTvTable.cshtml" />
     <Content Include="Views\tv_shows\InFourDaysTvTable.cshtml" />
     <Content Include="Views\Home\FiveDaysFromNow.cshtml" />
@@ -237,6 +237,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\tv_shows\AdminPage.cshtml" />
+    <Content Include="Views\Shared\_Puff2.cshtml" />
+    <Content Include="Views\Shared\_Puff3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

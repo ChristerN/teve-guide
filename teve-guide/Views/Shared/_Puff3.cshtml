@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<teve_guide.Models.db.tv_shows>
+
+@{
+    ViewBag.Title = "På teve just nu";
+}
+
+
+<br />
+
+<table class="table">
+    <tr>
+        <td>
+            <!--Puff-->
+            @*@foreach (var item in Model)
+
+
+                   {
+                       if (item.Id == 1004)
+                       {
+                        <strong>@Html.DisplayFor(modelItem => item.Title)</strong> <br />
+                        @Html.DisplayFor(modelItem => item.Substance) <br />
+                        @Html.DisplayFor(modelItem => item.Channel) <br />
+                        @Html.DisplayFor(modelItem => item.Starttime) <br />
+                        @Html.ActionLink("Mer info", "Details", new { id = item.Id })
+                    }
+                }*@
+
+            @foreach (var p in Model)
+            {
+                if(p.Id==1004)
+                { 
+                <strong>@p.Title</strong> <br />
+                @p.Substance <br />
+                @p.Channel <br />
+                @p.Starttime <br />
+
+                @Html.ActionLink("Mer info", "Details", new { id = p.Id }) <br />
+                }
+            }
+
+
+
+        </td>
+
+
+
+        <td>
+
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                </td>*@
+    </tr>
+</table>
