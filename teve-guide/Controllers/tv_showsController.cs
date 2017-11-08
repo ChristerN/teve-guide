@@ -9,6 +9,7 @@ using teve_guide.Models.db;
 using System;
 using System.Web;
 using teve_guide.Models;
+using teve_guide.Security;
 
 namespace teve_guide.Controllers
 {
@@ -257,5 +258,16 @@ namespace teve_guide.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        [AuthorizeRoles("Admin")]
+
+        public ActionResult AdminPage()
+        {
+            ViewBag.Message = "Endast administratörer.";
+            return View();
+          
+        }
+
     }
 }
