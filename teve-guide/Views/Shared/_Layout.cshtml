@@ -29,6 +29,7 @@
                     <li>@Html.ActionLink("Om fem dagar", "FiveDaysFromNow", "Home")</li>
                     <li>@Html.ActionLink("Om sex dagar", "SixDaysFromNow", "Home")</li>
                     <li>@Html.ActionLink("Min sida", "MyPage", "tv_shows")</li>
+                    <li>@Html.ActionLink("Administrera", "AdminPage", "tv_shows")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Logga ut", "SignOut", "Account")</li>
