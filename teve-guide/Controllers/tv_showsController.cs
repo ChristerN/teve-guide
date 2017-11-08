@@ -135,7 +135,7 @@ namespace teve_guide.Controllers
                 ViewBag.Message += "Programtablå TV 6";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
             }
-            ViewBag.Message += collection["checkbox"].ToString();
+            //ViewBag.Message += collection["form-group"].ToString();
             return View(collection.ToString());
         }
 

@@ -18,69 +18,71 @@
         @Html.ActionLink("Create New", "Create")
     </p>
     <p>@ViewBag.Message</p>
-    <p>
+    
         @using (Html.BeginForm())
         {
-            <h4>SVT 1</h4>
-            <input type="checkbox" class="checkbox" name="SVT1" value="true"/>
+            <div class="form-group">
+                <h4>SVT 1</h4>
+                <input type="checkbox" class="checkbox" name="SVT1" value="true" />
 
-            <h4>SVT 2</h4>
-            <input type="checkbox" class="checkbox" name="SVT2" value="true"/>
+                <h4>SVT 2</h4>
+                <input type="checkbox" class="checkbox" name="SVT2" value="true" />
 
-            <h4>SVT 24</h4>
-            <input type="checkbox" class="checkbox" name="SVT24" value="true" />
+                <h4>SVT 24</h4>
+                <input type="checkbox" class="checkbox" name="SVT24" value="true" />
 
-            <h4>TV 4</h4>
-            <input type="checkbox" class="checkbox" name="TV4" value="true" />
+                <h4>TV 4</h4>
+                <input type="checkbox" class="checkbox" name="TV4" value="true" />
 
-            <h4>TV 6</h4>
-            <input type="checkbox" class="checkbox" name="TV6" value="true" />
+                <h4>TV 6</h4>
+                <input type="checkbox" class="checkbox" name="TV6" value="true" />
 
-            <input name="btnChannel" type="submit" value="button" class="btn btn-default" />
+                <input name="btnChannel" type="submit" value="button" class="btn btn-default" />
+            </div>
         }
 
-        @*<form method="post" id="formRegistration" action="GetChannel"></form>*@
-        @*<input id="SVT1" type="checkbox" />*@
-        @*<input name="@ nameof(@model.distinct(Channel)))" />*@
-        @*@Model.db.Channel = string channel;*@
+                @*<form method="post" id="formRegistration" action="GetChannel"></form>*@
+                @*<input id="SVT1" type="checkbox" />*@
+                @*<input name="@ nameof(@model.distinct(Channel)))" />*@
+                @*@Model.db.Channel = string channel;*@
 
-        @*@bool CheckChannels(checkbox)
-        {
-            @if("CheckboxSVT1" = true)
-            {
-                string channel = @Model.Channel;
-            }
-        }*@
-        
-       @*@using (Html.BeginForm("test", "User", FormMethod.Post,
-     new { enctype = "multipart/form-data" }))
-       {
-        @Html.AntiForgeryToken()
+                @*@bool CheckChannels(checkbox)
+                    {
+                        @if("CheckboxSVT1" = true)
+                        {
+                            string channel = @Model.Channel;
+                        }
+                    }*@
 
-        <fieldset>
-            <legend>Test CheckBox</legend>
+                @*@using (Html.BeginForm("test", "User", FormMethod.Post,
+                    new { enctype = "multipart/form-data" }))
+                      {
+                       @Html.AntiForgeryToken()
 
-            <table>
-                <tr>
-                    <td>@Html.Label("Select"):</td>
-                    <td>@Html.CheckBox("FlatFile", false)</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Check" /></td>
-                </tr>
-                <tr>
-                    <td>@ViewBag.Message</td>
-                </tr>
-            </table>
-        </fieldset>
-       }*@
+                       <fieldset>
+                           <legend>Test CheckBox</legend>
 
-        @*@Html.CheckBox("SVT1")
-        @Html.CheckBox("SVT2")*@
+                           <table>
+                               <tr>
+                                   <td>@Html.Label("Select"):</td>
+                                   <td>@Html.CheckBox("FlatFile", false)</td>
+                               </tr>
+                               <tr>
+                                   <td colspan="2"><input type="submit" value="Check" /></td>
+                               </tr>
+                               <tr>
+                                   <td>@ViewBag.Message</td>
+                               </tr>
+                           </table>
+                       </fieldset>
+                      }*@
 
-        @*bool checked = Request.Form.Allkeys.Where(c=>c.Contains("checkedArchive")).FirstOrDefault()!=null;*@
-    </p>
-  
+                @*@Html.CheckBox("SVT1")
+                    @Html.CheckBox("SVT2")*@
+
+                @*bool checked = Request.Form.Allkeys.Where(c=>c.Contains("checkedArchive")).FirstOrDefault()!=null;*@
+            
+
     @*@if ("CheckboxSVT1" == checked)
         {*@
     @*<section>
