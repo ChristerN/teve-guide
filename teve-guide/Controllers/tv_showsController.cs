@@ -1,9 +1,14 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.ServiceModel.Channels;
 using System.Web.Mvc;
 using teve_guide.Models.db;
+using System;
+using System.Web;
+using teve_guide.Models;
 
 namespace teve_guide.Controllers
 {
@@ -91,8 +96,62 @@ namespace teve_guide.Controllers
 
         public ActionResult MyPage()
         {
-            return View(db.tv_shows.ToList());
+           // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
+            //bool value = (bool)cbValue.ConvertTo(typeof(bool));
+            return View();
+            //var currentChannel = from c in db.tv_shows
+            //                     where c.Channel.Contains(channel)
+            //                     select c;
+            //return View(currentChannel.ToList());
         }
+
+        [HttpPost]
+        public ActionResult MyPage(FormCollection collection)
+        {
+            ViewBag.Message = "Mina valda kanaler: ";
+            if (collection["SVT1"] != null)
+            {
+                ViewBag.Message = "Programtablå SVT 1";
+                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 1") select c;
+            }
+            if (collection["SVT2"] != null)
+            {
+                ViewBag.Message = "Programtablå SVT 2";
+                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 2") select c;
+            }
+            if (collection["SVT2"] != null)
+            {
+                ViewBag.Message = "Programtablå SVT 24";
+                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 24") select c;
+            }
+            if (collection["TV4"] != null)
+            {
+                ViewBag.Message = "Programtablå TV 4";
+                var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 4") select c;
+            }
+            if (collection["TV6"] != null)
+            {
+                ViewBag.Message = "Programtablå TV 6";
+                var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
+            }
+            ViewBag.Message += collection["checkbox"].ToString();
+            return View(collection.ToString());
+        }
+
+        //[HttpPost]
+        //public ActionResult test(bool FlatFile)
+        //{
+        //    if (FlatFile == true)
+        //    {
+        //        ViewBag.Message = "Selected";
+        //        return View();
+        //    }
+        //    else 
+        //   {
+        //        ViewBag.Message = "Not selected";
+        //        return View();
+        //    }
+        //}
 
         // GET: tv_shows/Details/5
         public ActionResult Details(int? id)
