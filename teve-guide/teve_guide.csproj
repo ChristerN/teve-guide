@@ -239,7 +239,6 @@
     <Content Include="Views\tv_shows\AdminPage.cshtml" />
     <Content Include="Views\Shared\_Puff2.cshtml" />
     <Content Include="Views\Shared\_Puff3.cshtml" />
-    <Content Include="Views\tv_shows\MyPageView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

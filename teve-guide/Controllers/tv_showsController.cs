@@ -122,13 +122,7 @@ namespace teve_guide.Controllers
                         where c.Channel == channel || channel == null || channel == ""
                         select c;
             return View(model);
-           // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
-            //bool value = (bool)cbValue.ConvertTo(typeof(bool));
-           // return View(db.tv_shows.ToList());
-            //var currentChannel = from c in db.tv_shows
-            //                     where c.Channel.Contains(channel)
-            //                     select c;
-            //return View(currentChannel.ToList());
+        
         }
 
         //[HttpPost]

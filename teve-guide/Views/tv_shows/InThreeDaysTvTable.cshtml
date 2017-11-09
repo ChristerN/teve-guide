@@ -34,7 +34,10 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })<br />
+                    @Html.ActionLink("På den här kanalen om fyra dagar", "InFourDaysTvTable", new { channel = item.Channel })<br />
+                    @Html.ActionLink("På den här kanalen igår", "TomorrowTvTable",new { channel = item.Channel })
+
                 </td>
             </tr>
         }
@@ -44,7 +47,7 @@
 
 <p>@Html.ActionLink("På den här kanalen om fyra dagar", "InFourDaysTvTable")</p>
 
-<p>@Html.ActionLink("På den här kanalen igår", "TomorrowTvTable")</p>
+
 
 <p>@Html.ActionLink("Till startsidan", "Index")</p>
 
