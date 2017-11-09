@@ -35,16 +35,13 @@
                 </td>
                 <td>
                     @Html.ActionLink("Mer info", "Details", new { id = item.Id })
+                    @Html.ActionLink("På den här kanalen om fem dagar", "InFiveDaysTvTable")
                 </td>
             </tr>
         }
     }
 
 </table>
-
-<p>@Html.ActionLink("På den här kanalen om fem dagar", "InFiveDaysTvTable")</p>
-
-<p>@Html.ActionLink("På den här kanalen idag", "CurrentTvTable")</p>
 
 <p>@Html.ActionLink("Till startsidan", "Index")</p>
 

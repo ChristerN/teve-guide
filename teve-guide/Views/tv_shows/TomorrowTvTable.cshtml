@@ -34,17 +34,15 @@
                     @Html.DisplayFor(modelItem => item.Category)
                 </td>
                 <td>
-                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })<br />
+                    @Html.ActionLink("På den här kanalen om tre dagar", "InThreeDaysTvTable", new { channel = item.Channel })<br />
+                    @Html.ActionLink("På den här kanalen idag", "CurrentTvTable", new { channel = item.Channel })
                 </td>
             </tr>
         }
     }
 
 </table>
-
-<p>@Html.ActionLink("På den här kanalen i övermorgon", "InTwoDaysTvTable")</p>
-
-<p>@Html.ActionLink("På den här kanalen idag", "CurrentTvTable")</p>
 
 <p>@Html.ActionLink("Till startsidan", "Index")</p>
 

@@ -18,21 +18,18 @@ namespace teve_guide.Controllers
         public ActionResult Tomorrow()
         {
             ViewBag.Message = "På TV imorgon";
-
             return View(db.tv_shows.ToList());
         }
 
         public ActionResult TwoDaysFromNow()
         {
             ViewBag.Message = "På TV om två dagar";
-
             return View(db.tv_shows.ToList());
         }
 
         public ActionResult ThreeDaysFromNow()
         {
             ViewBag.Message = "På TV om tre dagar";
-
             return View(db.tv_shows.ToList());
         }
 
