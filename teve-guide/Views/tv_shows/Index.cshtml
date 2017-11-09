@@ -12,7 +12,7 @@ if (Request["Choice"] != null)
 <strong>Vi tipsar om dessa program</strong>
 <table>
     <tr>
-        <td>@Html.Partial("_Puff1")</td>
+        <td>@Html.Partial("_Puff1", (int ?)@ViewBag.Puff1)</td>
         <td>@Html.Partial("_Puff2")</td>
         <td>@Html.Partial("_Puff3")</td>
     </tr>
