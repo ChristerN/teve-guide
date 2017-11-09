@@ -30,17 +30,17 @@ namespace teve_guide.Data
             return role.Any();
         }
 
-        public List<TvShow> GetTvShows()
-        {
-            var ts = db.tv_shows.ToList();
-            List<TvShow> tvShow = new List<TvShow>();
-            foreach (var item in ts)
-            {
-                tvShow.ToList();
-            }
+        //public List<TvShow> GetTvShows()
+        //{
+        //    var ts = db.tv_shows.ToList();
+        //    List<TvShow> tvShow = new List<TvShow>();
+        //    foreach (var item in ts)
+        //    {
+        //        tvShow.ToList();
+        //    }
            
-            return tvShow;
-        }
+        //    return tvShow;
+        //}
 
     }
 }

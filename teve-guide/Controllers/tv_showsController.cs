@@ -42,10 +42,12 @@ namespace teve_guide.Controllers
         public ActionResult TomorrowTvTable(string channel)
         {
             var currentChannel = from c in db.tv_shows
+                                 orderby c.Starttime
                                  where c.Channel.Contains(channel)
                                  select c;
 
-            return View(currentChannel.ToList());
+            return View(currentChannel);
+           
         }
 
         public ActionResult InTwoDaysTvTable(string channel)

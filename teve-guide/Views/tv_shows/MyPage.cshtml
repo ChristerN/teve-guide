@@ -54,19 +54,25 @@
                     
                 <input name="btnChannel" type="submit" value="Välj" class="btn btn-default" />
             </div>*@
-<div>
-   @using (Html.BeginForm("MyPage", "tv-shows", FormMethod.Get))
-   {
-       @Html.DropDownList("channel", new SelectList(ViewBag.Channel))
+    <h3>Välj kanaler till din TV-tablå</h3>
 
-       <input type="submit" value="Välj dina kanaler" />
+   @using (Html.BeginForm("MyPage", "tv_shows", FormMethod.Get))
+   {
+       @Html.DropDownList("channel", new MultiSelectList(ViewBag.Channel))
+
+    <input type="submit" value="Välj" />
    }
-</div>    
+
+
+      
+
+   
+    
             @*<div>
               <label class="control-label" for="Feedback"></label>
                 @Html.Label("Feedback", ViewData ["channel"])
             </div>*@
-        }
+        
 
     @*@using (Html.BeginForm())
     {
@@ -174,9 +180,9 @@
                         @Html.DisplayFor(modelItem => item.Channel)
                     </td>
                     <td>
-                        @*@Html.ActionLink("Edit", "Edit", new { id = item.Id })*@ |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                       |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+                      
                     </td>
                 </tr>
             }

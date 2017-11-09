@@ -3,7 +3,7 @@
     ViewBag.Title = "På TV i övermorgon";
 }
 <h2>@ViewBag.Title</h2>
-<h3>@DateTime.Today.AddDays(2)</h3>
+<h3>@DateTime.Today.AddDays(2).ToShortDateString()</h3>
 
 <table class="table">
 
