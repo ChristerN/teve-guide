@@ -3,6 +3,10 @@
 
 @{
     ViewBag.Title = "Min sida";
+
+    //var channelChoice = "";
+    //if (Request["Choice"] != null)
+    //{ channelChoice = Request["Choice"]; }
 }
 
 
@@ -14,32 +18,63 @@
     <title>MyPage</title>
 </head>
 <body>
+    @*<form method="post" action="">
+        Mina kanaler:
+        <select name="Choice">
+            <option value="SVT1">SVT 1</option>
+            <option value="SVT2">SVT 2</option>
+            <option value="SVT24">SVT 24</option>
+            <option value="TV4">TV 4</option>
+            <option value="TV6">TV 6</option>
+        </select>
+        <input type="submit" value="Välj" />
+    </form>*@ 
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
     <p>@ViewBag.Message</p>
     
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("MyPage","tv_shows", FormMethod.Post, new { id="Form1"}))
         {
             <div class="form-group">
-                <h4>SVT 1</h4>
-                <input type="checkbox" class="checkbox" name="SVT1" value="true" />
+                
+                <input type="checkbox" class="checkbox" name="channel" value="SVT1" />SVT 1
 
-                <h4>SVT 2</h4>
-                <input type="checkbox" class="checkbox" name="SVT2" value="true" />
+                
+                <input type="checkbox" class="checkbox" name="channel" value="SVT2" />SVT 2
 
-                <h4>SVT 24</h4>
-                <input type="checkbox" class="checkbox" name="SVT24" value="true" />
+                
+                <input type="checkbox" class="checkbox" name="channel" value="SVT24" />SVT 24
 
-                <h4>TV 4</h4>
-                <input type="checkbox" class="checkbox" name="TV4" value="true" />
+             
+                <input type="checkbox" class="checkbox" name="channel" value="TV4" />TV 4
 
-                <h4>TV 6</h4>
-                <input type="checkbox" class="checkbox" name="TV6" value="true" />
-
+              
+                <input type="checkbox" class="checkbox" name="channel" value="TV6" />TV 6
+                    
                 <input name="btnChannel" type="submit" value="button" class="btn btn-default" />
             </div>
+
+            <div>
+              <label class="control-label" for="Feedback"></label>
+                @Html.Label("Feedback", ViewData ["channel"])
+            </div>
         }
+
+    @*@using (Html.BeginForm())
+    {
+        <table>
+            @for (int i = 0; i < model.Channel.Count; i++)
+            {
+<td>
+    @Html.CheckBoxFor(model => model.Channel[i].IsChecked)
+    <label>@model.Channel[i]</label>
+</td>
+            }
+        </table>
+        <input type="submit" value="Submit" />
+    }*@
+
 
                 @*<form method="post" id="formRegistration" action="GetChannel"></form>*@
                 @*<input id="SVT1" type="checkbox" />*@
