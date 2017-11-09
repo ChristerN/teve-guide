@@ -3,6 +3,7 @@
 
 @{
     ViewBag.Title = "På teve just nu";
+    var puff2 = 5003;
 }
 
 
@@ -12,23 +13,10 @@
     <tr>
         <td>
             <!--Puff-->
-            @*@foreach (var item in Model)
-
-
-                   {
-                       if (item.Id == 1004)
-                       {
-                        <strong>@Html.DisplayFor(modelItem => item.Title)</strong> <br />
-                        @Html.DisplayFor(modelItem => item.Substance) <br />
-                        @Html.DisplayFor(modelItem => item.Channel) <br />
-                        @Html.DisplayFor(modelItem => item.Starttime) <br />
-                        @Html.ActionLink("Mer info", "Details", new { id = item.Id })
-                    }
-                }*@
 
             @foreach (var p in Model)
             {
-                if(p.Id==29)
+                if(p.Id==puff2)
                 { 
                 <strong>@p.Title</strong> <br />
                 @p.Substance <br />
@@ -42,15 +30,5 @@
 
 
         </td>
-
-
-
-        <td>
-
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Mer info", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                </td>*@
     </tr>
 </table>
