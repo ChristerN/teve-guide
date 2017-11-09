@@ -291,5 +291,11 @@ namespace teve_guide.Controllers
 
         }
 
+        public ActionResult SetPuffId(int Id)
+        {
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

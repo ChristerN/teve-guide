@@ -11,10 +11,31 @@
 <p>
     @Html.ActionLink("Lägg till program", "Create")
 </p>
+
+<!--Testar att sätta puff-id-->
+<form method="post" action="SetPuffId">
+    <table>
+        <tr>
+            <td>Ange program-id för puff 1</td>
+            <td><input id='puff1' name='Id' type='text' value" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Sätt som puff 1" /></td>
+        </tr>
+
+
+    </table>
+</form>
+<!--Slut på den testen-->
+
 <br />
 <h3>Alla program:</h3>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -38,9 +59,12 @@
 
     @foreach (var item in Model)
     {
-        if (item.Starttime < DateTime.Now)
-        {
+        //if (item.Starttime < DateTime.Now)
+        //{
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
@@ -65,7 +89,7 @@
                     @Html.ActionLink("Ta bort", "Delete", new { id=item.Id })
                 </td>
             </tr>
-        }
+        @*}*@
     }
 
 </table>
