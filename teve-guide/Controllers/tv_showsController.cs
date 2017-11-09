@@ -113,7 +113,7 @@ namespace teve_guide.Controllers
 
         public ActionResult MyPage(string channel)
         {
-            ViewBag.Channel = (from c in db.tv_shows select c.Category).Distinct();
+            ViewBag.Channel = (from c in db.tv_shows select c.Channel).Distinct();
 
             var model = from c in db.tv_shows
                         orderby c.Channel
