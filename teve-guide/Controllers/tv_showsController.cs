@@ -93,75 +93,6 @@ namespace teve_guide.Controllers
             return View(currentChannel.ToList());
         }
 
-        [Authorize]
-
-        public ActionResult MyPage()
-        {
-            
-           // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
-            //bool value = (bool)cbValue.ConvertTo(typeof(bool));
-            return View(db.tv_shows.ToList());
-            //var currentChannel = from c in db.tv_shows
-            //                     where c.Channel.Contains(channel)
-            //                     select c;
-            //return View(currentChannel.ToList());
-        }
-
-        [HttpPost]
-        public ActionResult MyPage(FormCollection collection)
-        {
-            ViewBag.Message = "Mina valda kanaler: ";
-            if (collection["SVT1"] != null)
-            {
-                ViewBag.Message += "Programtablå SVT 1";
-                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 1") select c;
-            }
-            if (collection["SVT2"] != null)
-            {
-                ViewBag.Message += "Programtablå SVT 2";
-                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 2") select c;
-            }
-            if (collection["SVT2"] != null)
-            {
-                ViewBag.Message += "Programtablå SVT 24";
-                var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 24") select c;
-            }
-            if (collection["TV4"] != null)
-            {
-                ViewBag.Message += "Programtablå TV 4";
-                var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 4") select c;
-            }
-            if (collection["TV6"] != null)
-            {
-                ViewBag.Message += "Programtablå TV 6";
-                var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
-            }
-            //ViewData["channel"] = lista;
-            //ViewBag.Message += collection["form-group"].ToString();
-            return View(collection.ToString());
-        }
-
-        public ActionResult MyPageView(FormCollection collection)
-        {
-            try
-            {
-                ViewBag.TvChannels = collection[""];
-            }
-            catch 
-            {
-                ViewBag.Message = "Det blev en catch...";
-            }
-            return ViewBag();
-        }
-
-        [HttpPost]
-        public ActionResult ShowTvshow(TvShow model)
-        {
-            return View();
-        }
-
-       
-
         // GET: tv_shows/Details/5
         public ActionResult Details(int? id)
         {
@@ -177,6 +108,88 @@ namespace teve_guide.Controllers
             return View(tv_shows);
         }
 
+
+        [Authorize]
+
+        public ActionResult MyPage(string channel)
+        {
+            ViewBag.Channel = (from c in db.tv_shows select c.Category).Distinct();
+
+            var model = from c in db.tv_shows
+                        orderby c.Channel
+                        where c.Channel == channel || channel == null || channel == ""
+                        select c;
+            return View(model);
+           // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
+            //bool value = (bool)cbValue.ConvertTo(typeof(bool));
+           // return View(db.tv_shows.ToList());
+            //var currentChannel = from c in db.tv_shows
+            //                     where c.Channel.Contains(channel)
+            //                     select c;
+            //return View(currentChannel.ToList());
+        }
+
+        //[HttpPost]
+        //public ActionResult MyPage(FormCollection collection)
+        //{
+        //    ViewBag.Message = "Mina valda kanaler: ";
+        //    if (collection["SVT1"] != null)
+        //    {
+        //        ViewBag.Message += "Programtablå SVT 1";
+        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 1") select c;
+        //    }
+        //    if (collection["SVT2"] != null)
+        //    {
+        //        ViewBag.Message += "Programtablå SVT 2";
+        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 2") select c;
+        //    }
+        //    if (collection["SVT2"] != null)
+        //    {
+        //        ViewBag.Message += "Programtablå SVT 24";
+        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 24") select c;
+        //    }
+        //    if (collection["TV4"] != null)
+        //    {
+        //        ViewBag.Message += "Programtablå TV 4";
+        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 4") select c;
+        //    }
+        //    if (collection["TV6"] != null)
+        //    {
+        //        ViewBag.Message += "Programtablå TV 6";
+        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
+        //    }
+        //    if (collection != null)
+        //    {
+
+        //        //ViewData["channel"].ToString();
+        //    }
+            
+        //    //ViewBag.Message += collection["form-group"].ToString();
+        //    return View(collection.ToString());
+        //}
+
+        public ActionResult MyPageView(FormCollection collection)
+        {
+            try
+            {
+                ViewBag.TvChannels = collection["channel"];
+            }
+            catch 
+            {
+                ViewBag.Message = "Det blev en catch...";
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ShowTvshow(TvShow model)
+        {
+            return View();
+        }
+
+       
+
+     
         // GET: tv_shows/Create
         public ActionResult Create()
         {

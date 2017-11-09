@@ -14,6 +14,7 @@ namespace teve_guide.Models
         public string Substance { get { return Substance.Trim(); } set { Substance = value; }  }
         public string Category { get; set; }
         public string Channel { get; set; }
+        public List<TvShow> tvShow { get; set; }
     }
 
     //public class ChannelList

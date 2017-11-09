@@ -1,6 +1,8 @@
 ﻿using teve_guide.Models.db;
 using System.Linq;
 using System.Data.Entity;
+using teve_guide.Models;
+using System.Collections.Generic;
 
 namespace teve_guide.Data
 {
@@ -26,6 +28,18 @@ namespace teve_guide.Data
                  .Include(x => x.Role).Where(x => x.Role.Equals(roleName));
 
             return role.Any();
+        }
+
+        public List<TvShow> GetTvShows()
+        {
+            var ts = db.tv_shows.ToList();
+            List<TvShow> tvShow = new List<TvShow>();
+            foreach (var item in ts)
+            {
+                tvShow.ToList();
+            }
+           
+            return tvShow;
         }
 
     }

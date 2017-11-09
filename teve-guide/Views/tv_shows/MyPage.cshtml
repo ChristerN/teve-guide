@@ -29,36 +29,43 @@
         </select>
         <input type="submit" value="Välj" />
     </form>*@ 
-    <p>
+    @*<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
-    <p>@ViewBag.Message</p>
+    </p>*@
+    @*<p>@ViewBag.Message</p>
     
-        @using (Html.BeginForm("MyPage","tv_shows", FormMethod.Post, new { id="Form1"}))
+        @using (Html.BeginForm("MyPage","tv_shows", FormMethod.Post))
         {
             <div class="form-group">
                 
-                <input type="checkbox" class="checkbox" name="channel" value="SVT1" />SVT 1
+                <input type="checkbox" class="checkbox" name="channel" value="SVT1" />SVT 1<br />
 
                 
-                <input type="checkbox" class="checkbox" name="channel" value="SVT2" />SVT 2
+                <input type="checkbox" class="checkbox" name="channel" value="SVT2" />SVT 2<br />
 
                 
-                <input type="checkbox" class="checkbox" name="channel" value="SVT24" />SVT 24
+                <input type="checkbox" class="checkbox" name="channel" value="SVT24" />SVT 24<br />
 
              
-                <input type="checkbox" class="checkbox" name="channel" value="TV4" />TV 4
+                <input type="checkbox" class="checkbox" name="channel" value="TV4" />TV 4<br />
 
               
-                <input type="checkbox" class="checkbox" name="channel" value="TV6" />TV 6
+                <input type="checkbox" class="checkbox" name="channel" value="TV6" />TV 6<br />
                     
-                <input name="btnChannel" type="submit" value="button" class="btn btn-default" />
-            </div>
+                <input name="btnChannel" type="submit" value="Välj" class="btn btn-default" />
+            </div>*@
+<div>
+   @using (Html.BeginForm("MyPage", "tv-shows", FormMethod.Get))
+   {
+       @Html.DropDownList("channel", new SelectList(ViewBag.Channel))
 
-            <div>
+       <input type="submit" value="Välj dina kanaler" />
+   }
+</div>    
+            @*<div>
               <label class="control-label" for="Feedback"></label>
                 @Html.Label("Feedback", ViewData ["channel"])
-            </div>
+            </div>*@
         }
 
     @*@using (Html.BeginForm())
