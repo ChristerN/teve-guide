@@ -13,7 +13,7 @@ namespace teve_guide.Models
         public DateTime Endtime { get; set; }
         public string Substance { get { return Substance.Trim(); } set { Substance = value; }  }
         public string Category { get; set; }
-        public string Channel { get; set; }
+        public string Channel { get { return Channel.Trim(); } set { Channel = value; } }
         public List<TvShow> tvShow { get; set; }
     }
 

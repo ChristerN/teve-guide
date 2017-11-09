@@ -3,9 +3,11 @@
 
 @{
     ViewBag.Title = "På teve just nu";
-    var puff1 = 5002;
-}
+    var puff1 = @ViewBag.Puff1;
+       
+        
 
+}
 
 <br />
 
@@ -27,7 +29,6 @@
                 @Html.ActionLink("Mer info", "Details", new { id = p.Id }) <br />
                 }
             }
-
 
 
         </td>
