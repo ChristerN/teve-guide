@@ -93,10 +93,11 @@ namespace teve_guide.Controllers
             return View(currentChannel.ToList());
         }
 
-       // [Authorize]
+        [Authorize]
 
         public ActionResult MyPage()
         {
+            
            // ValueProvider cbValue = BindingContext.ValueProvider.GetValue("SVT1");
             //bool value = (bool)cbValue.ConvertTo(typeof(bool));
             return View(db.tv_shows.ToList());
@@ -135,24 +136,31 @@ namespace teve_guide.Controllers
                 ViewBag.Message += "Programtablå TV 6";
                 var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
             }
+            //ViewData["channel"] = lista;
             //ViewBag.Message += collection["form-group"].ToString();
             return View(collection.ToString());
         }
 
-        //[HttpPost]
-        //public ActionResult test(bool FlatFile)
-        //{
-        //    if (FlatFile == true)
-        //    {
-        //        ViewBag.Message = "Selected";
-        //        return View();
-        //    }
-        //    else 
-        //   {
-        //        ViewBag.Message = "Not selected";
-        //        return View();
-        //    }
-        //}
+        public ActionResult MyPageView(FormCollection collection)
+        {
+            try
+            {
+                ViewBag.TvChannels = collection[""];
+            }
+            catch 
+            {
+                ViewBag.Message = "Det blev en catch...";
+            }
+            return ViewBag();
+        }
+
+        [HttpPost]
+        public ActionResult ShowTvshow(TvShow model)
+        {
+            return View();
+        }
+
+       
 
         // GET: tv_shows/Details/5
         public ActionResult Details(int? id)

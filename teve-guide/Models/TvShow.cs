@@ -16,4 +16,8 @@ namespace teve_guide.Models
         public string Channel { get; set; }
     }
 
+    //public class ChannelList
+    //{
+    //    public List<TvShow> channel { get; set; }
+    //}
 }

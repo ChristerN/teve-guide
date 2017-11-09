@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "På teve just nu";
+    var imagePath=""; 
+if (Request["Choice"] != null)
+   {imagePath="images/" + Request["Choice"];} 
 }
 
 <h2>Teve Guide - på teve just nu!</h2>
