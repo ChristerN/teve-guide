@@ -17,12 +17,7 @@ namespace teve_guide.Controllers
     {
     private TeveGuideEntities db = new TeveGuideEntities();
 
-    //public ActionResult Startsida()
-    //{
-    //    var tvShow = db.GetTvShowNow();
-    //    return View(db.tvShow.ToList());
-    //}
-
+   
     // GET: tv_shows
     public ActionResult Index()
         {
@@ -125,45 +120,6 @@ namespace teve_guide.Controllers
         
         }
 
-        //[HttpPost]
-        //public ActionResult MyPage(FormCollection collection)
-        //{
-        //    ViewBag.Message = "Mina valda kanaler: ";
-        //    if (collection["SVT1"] != null)
-        //    {
-        //        ViewBag.Message += "Programtablå SVT 1";
-        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 1") select c;
-        //    }
-        //    if (collection["SVT2"] != null)
-        //    {
-        //        ViewBag.Message += "Programtablå SVT 2";
-        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 2") select c;
-        //    }
-        //    if (collection["SVT2"] != null)
-        //    {
-        //        ViewBag.Message += "Programtablå SVT 24";
-        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("SVT 24") select c;
-        //    }
-        //    if (collection["TV4"] != null)
-        //    {
-        //        ViewBag.Message += "Programtablå TV 4";
-        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 4") select c;
-        //    }
-        //    if (collection["TV6"] != null)
-        //    {
-        //        ViewBag.Message += "Programtablå TV 6";
-        //        var currentChannel = from c in db.tv_shows where c.Channel.Contains("TV 6") select c;
-        //    }
-        //    if (collection != null)
-        //    {
-
-        //        //ViewData["channel"].ToString();
-        //    }
-            
-        //    //ViewBag.Message += collection["form-group"].ToString();
-        //    return View(collection.ToString());
-        //}
-
         public ActionResult MyPageView(FormCollection collection)
         {
             try
@@ -183,9 +139,6 @@ namespace teve_guide.Controllers
             return View();
         }
 
-       
-
-     
         // GET: tv_shows/Create
         public ActionResult Create()
         {
